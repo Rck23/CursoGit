@@ -1,0 +1,20 @@
+Para configurar SSH en GitHub, sigue estos pasos:
+
+Genera una clave SSH:
+
+Abre tu terminal.
+Ejecuta: ssh-keygen -t ed25519 -C "tu_correo@example.com" y sigue las instrucciones para crear la clave.
+Inicia el agente SSH:
+
+Ejecuta: eval "$(ssh-agent -s)".
+Luego, agrega tu clave privada: ssh-add ~/.ssh/id_ed25519.
+Copia la clave pública:
+
+Usa cat ~/.ssh/id_ed25519.pub para visualizarla y cópiala.
+Añade la clave a GitHub:
+
+Ve a GitHub, en "Settings" > "SSH and GPG keys", y selecciona "New SSH key". Pega tu clave pública.
+Prueba la conexión:
+
+Ejecuta: ssh -T git@github.com. Deberías ver un mensaje de éxito.
+Con esto, habrás configurado SSH para GitHub de forma segura y eficiente.
